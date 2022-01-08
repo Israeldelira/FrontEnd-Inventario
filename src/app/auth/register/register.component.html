@@ -1,0 +1,83 @@
+<section id="wrapper" class="login-register login-sidebar"
+    style="background-image:url(../../../assets/images/fondo-register.jpg);">
+    <div class="login-box card" style="box-shadow: 0 14px 28px rgb(29, 27, 27), 0 10px 10px rgba(36, 34, 34, 0.22);">
+        <br>
+        <div class="card-body">
+            <form class="form-horizontal form-material" id="loginform" autocomplete="=off" [formGroup]="registerForm"
+                (ngSubmit)="crearUsuario()">
+
+                <a href="javascript:void(0)" class="text-center db"><img src="../../../assets/images/logo-pic-white.png"
+                        alt="Home" /><br /><strong>
+                        <h2>PIC SOLUTIONS</h2>
+                    </strong></a>
+
+                <h3 class="box-title m-t-40 m-b-0">Crear cuenta</h3>
+                <div class="form-group m-t-20">
+                    <div class="col-md-12">
+                        <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class=" col text-danger">
+                        <p *ngIf="campoNoValido('nombre')">El nombre es requerido</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="col-md-12">
+                        <input class="form-control" type="text" formControlName="user" placeholder="Usuario">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col text-danger">
+                        <p *ngIf="campoNoValido('user')">El usuario es requerido</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="col-md-12">
+                        <input class="form-control" type="password" formControlName="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col text-danger">
+                        <p *ngIf="campoNoValido('password')">El password es requerido</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input class="form-control" type="password" formControlName="password2"
+                            placeholder="Confirm Password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col text-danger">
+                        <p *ngIf="campoNoValido('password')">La confirmacion de password es requerida</p>
+
+                        <p></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col text-danger">
+                        <p *ngIf="passwordsNoValidas()">Las contraseñas no coinciden</p>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <div class="form-group text-center m-t-20">
+                    <div class="col-md-12">
+                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light"
+                            type="submit">Registrarme</button>
+                    </div>
+                </div>
+                <div class="form-group m-b-0">
+                    <div class="col-md-12 text-center">
+                        <p>Tienes cuenta? <a routerLink="/login" class="text-info m-l-5"><b>Inicia sesion</b></a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
